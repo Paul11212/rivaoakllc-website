@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Riva Oak Independent Living | Independent Living Housing Program</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta
+    name="description"
+    content="Riva Oak Independent Living provides safe, affordable, gender-specific housing for adults capable of managing their Activities of Daily Living independently."
+  />
+  <style>
+    :root {
+      --primary: #1f4b5a;
+      --primary-light: #e7f1f4;
+      --accent: #c8a35f;
+      --text: #1f2933;
+      --bg: #f5f7fa;
+      --white: #ffffff;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a {
+      color: var(--primary);
+      text-decoration: none;
+    }
+
+    header {
+      background: var(--primary);
+      color: var(--white);
+      padding: 1rem 1.5rem;
+      position: sticky;
+      top: 0;
+      z-index: 20;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-weight: 700;
+      letter-spacing: 0.03em;
+    }
+
+    .logo img {
+      height: 40px;
+      width: auto;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1rem;
+      font-size: 0.95rem;
+    }
+
+    .nav-links a {
+      color: var(--white);
+      opacity: 0.9;
+    }
+
+    .nav-links a:hover {
+      opacity: 1;
+    }
+
+    .hero {
+      background: linear-gradient(
+        135deg,
+        var(--primary),
+        #244f63,
+        #1b3844
+      );
+      color: var(--white);
+      padding: 1rem 0 1rem;
+    }
+
+    .hero-grid {
+      display: block;
+      grid-template-columns: minmax(0, 2fr) minmax(0, 1.5fr);
+      gap: 0.5rem;
+      align-items: center;
+      color: #c8a35f;
+    }
+
+     .hero p {
+      font-size: 1.05rem;
+      max-width: 100%;
+      margin-bottom: 0.5rem;
+      color: #1b3844;
+    }
+
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.75rem;
+      margin-top: 0.5rem;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 999px;
+      padding: 0.7rem 1.4rem;
+      font-size: 0.95rem;
+      font-weight: 600;
+      border: none;
+      cursor: pointer;
+      transition: background 0.15s ease, transform 0.1s ease,
+        box-shadow 0.1s ease;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: #1f2933;
+      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.25);
+    }
+
+    .btn-primary:hover {
+      background: #b89352;
+      transform: translateY(-1px);
+      box-shadow: 0 10px 22px rgba(0, 0, 0, 0.3);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--white);
+      border: 1px solid rgba(255, 255, 255, 0.4);
+    }
+
+    .btn-outline:hover {
+      background: rgba(255, 255, 255, 0.08);
+    }
+
+    .hero-panel {
+      background: rgba(255, 255, 255, 0.08);
+      border-radius: 1rem;
+      padding: 1.5rem;
+      backdrop-filter: blur(4px);
+    }
+
+    .hero-panel h3 {
+      margin-bottom: 0.75rem;
+      font-size: 1.1rem;
+    }
+
+    .hero-panel ul {
+      list-style: none;
+      font-size: 0.9rem;
+    }
+
+    .hero-panel li {
+      margin-bottom: 0.4rem;
+    }
+
+    section {
+      padding: 3rem 0;
+    }
+
+    section:nth-of-type(odd) {
+      background: var(--white);
+    }
+
+    section:nth-of-type(even) {
+      background: var(--bg);
+    }
+
+    h2.section-title {
+      font-size: 1.6rem;
+      margin-bottom: 0.7rem;
+      color: var(--primary);
+    }
+
+    .section-subtitle {
+      font-size: 0.95rem;
+      color: #6b7280;
+      margin-bottom: 2rem;
+      max-width: 34rem;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1.4fr);
+      gap: 2rem;
+      align-items: flex-start;
+    }
+
+    .card {
+      background: var(--white);
+      border-radius: 0.9rem;
+      padding: 1.4rem;
+      box-shadow: 0 10px 24px rgba(15, 23, 42, 0.08);
+    }
+
+    .pill {
+      display: inline-block;
+      background: var(--primary-light);
+      color: var(--primary);
+      padding: 0.25rem 0.6rem;
+      border-radius: 999px;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 0.5rem;
+    }
+
+    .list-check {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .list-check li::before {
+      content: "•";
+      color: var(--accent);
+      font-weight: 900;
+      display: inline-block;
+      width: 1rem;
+      margin-left: -1rem;
+    }
+
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-top: 0.6rem;
+    }
+
+    .chip {
+      font-size: 0.8rem;
+      padding: 0.25rem 0.6rem;
+      border-radius: 999px;
+      border: 1px solid #e5e7eb;
+      background: #f9fafb;
+    }
+
+    .faq {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .faq-item {
+      margin-bottom: 1.25rem;
+    }
+
+    .faq-item h3 {
+      font-size: 1rem;
+      margin-bottom: 0.25rem;
+      color: var(--primary);
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.3fr) minmax(0, 1.2fr);
+      gap: 2rem;
+      align-items: flex-start;
+    }
+
+    form {
+      display: grid;
+      gap: 0.75rem;
+    }
+
+    label {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: #4b5563;
+    }
+
+    input,
+    select,
+    textarea {
+      width: 100%;
+      padding: 0.55rem 0.65rem;
+      border-radius: 0.5rem;
+      border: 1px solid #d1d5db;
+      font: inherit;
+    }
+
+    textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+
+    footer {
+      background: #0f172a;
+      color: #e5e7eb;
+      padding: 1.8rem 0;
+      font-size: 0.85rem;
+    }
+
+    .footer-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+    }
+
+    @media (max-width: 900px) {
+      .hero-grid,
+      .grid-2,
+      .contact-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .hero {
+        padding-top: 2.5rem;
+      }
+
+      .hero h1 {
+        font-size: 2rem;
+      }
+
+      .nav {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .nav-links {
+        flex-wrap: wrap;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="container nav">
+      <div class="logo">
+        <!-- Replace with your logo path -->
+        <img src="images/ROIL Logo.png" alt="Riva Oak Logo" />
+        <span>Riva Oak Independent Living</span>
+      </div>
+      <nav class="nav-links">
+        <a href="#about">About</a>
+        <a href="#who-we-serve">Who We Serve</a>
+        <a href="#program">Program</a>
+        <a href="#partners">For Partners</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container hero-grid">
+      <div>     
+        <h1>Live Independently. Live with Dignity.</h1>
+        <p>
+          Riva Oak Independent Living provides safe, affordable, gender-specific
+          housing for adults capable of managing their Activities of Daily
+          Living (ADLs) independently, with a focus on dignity, stability, and
+          community.
+<hr style="border: none; border-top: 1px solid rgba(255,255,255,.2); margin: 0.5rem 0;" />
+        <p style="font-size: 1.0rem; opacity: 0.9;">
+          Our homes are fully furnished, gender-specific, and located in
+          community settings that feel like home — not a facility.
+        </p>
+        <div class="hero-buttons">
+          <a href="#contact" class="btn btn-primary">For Residents & Families</a>
+          <a href="#partners" class="btn btn-outline"
+            >For Case Managers & VA Partners</a
+          >
+        </div>
+      </div>
+      
+        
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Mission & Vision / About -->
+  <section id="about">
+    <div class="container">
+      <h2 class="section-title">Our Mission & Vision</h2>
+      <p class="section-subtitle">
+        Riva Oak Independent Living exists to bridge the gap between affordable
+        housing and stable, supportive living environments for independent
+        adults.
+      </p>
+
+      <div class="grid-2">
+        <div class="card">
+          <div class="pill">Mission</div>
+          <p>
+            To empower adults to live independently with dignity, stability, and
+            community support through quality housing and compassionate service.
+          </p>
+        </div>
+        <div class="card">
+          <div class="pill">Vision</div>
+          <p>
+            To become a trusted leader in independent living housing across
+            multiple states, bridging the gap between affordable housing and
+            supportive living environments.
+          </p>
+        </div>
+      </div>
+
+      <div style="margin-top: 2rem;">
+        <h3 style="font-size: 1.1rem; margin-bottom: 0.6rem;">
+          Independent Living Housing Program (ILHP)
+        </h3>
+        <p>
+          The ILHP is designed for adults who can manage their own Activities of
+          Daily Living (ADLs) but need a safe, stable, and affordable place to
+          live. We operate gender-specific, fully furnished homes in community
+          settings — ideal for veterans, agency-referred clients, and adults on
+          fixed incomes.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Who We Serve -->
+  <section id="who-we-serve">
+    <div class="container">
+      <h2 class="section-title">Who We Serve</h2>
+      <p class="section-subtitle">
+        Riva Oak Independent Living partners with individuals, families, and
+        agencies to provide reliable housing solutions.
+      </p>
+
+      <div class="grid-2">
+        <div class="card">
+          <h3>Veterans (VA Clients)</h3>
+          <p>
+            We collaborate with VA case managers and veteran-serving
+            organizations to offer stable, dignity-centered housing for those
+            who have served our country.
+          </p>
+          <div class="chips">
+            <span class="chip">VA referrals</span>
+            <span class="chip">Stable housing</span>
+            <span class="chip">Community-based</span>
+          </div>
+        </div>
+        <div class="card">
+          <h3>Social Service & Community Placements</h3>
+          <p>
+            We support adults referred by hospitals, nonprofits, and social
+            service agencies who are transitioning, stabilizing, or rebuilding
+            their lives.
+          </p>
+          <div class="chips">
+            <span class="chip">Case manager friendly</span>
+            <span class="chip">Rapid placement</span>
+            <span class="chip">Clear documentation</span>
+          </div>
+        </div>
+        <div class="card">
+          <h3>Private-Pay Residents</h3>
+          <p>
+            Adults seeking a safe, shared living environment with predictable
+            monthly costs can apply directly to our Independent Living Housing
+            Program.
+          </p>
+          <div class="chips">
+            <span class="chip">Affordable</span>
+            <span class="chip">Furnished</span>
+            <span class="chip">Shared homes</span>
+          </div>
+        </div>
+        <div class="card">
+          <h3>Social Security / Fixed-Income Residents</h3>
+          <p>
+            Our program is structured to work with individuals on Social
+            Security or other fixed-income sources, with realistic and
+            sustainable monthly rates.
+          </p>
+          <div class="chips">
+            <span class="chip">Fixed-income friendly</span>
+            <span class="chip">Transparent costs</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Program & Homes -->
+  <section id="program">
+    <div class="container">
+      <h2 class="section-title">What Our Homes Offer</h2>
+      <p class="section-subtitle">
+        We focus on stability, safety, and dignity in every home we operate.
+      </p>
+
+      <div class="grid-2">
+        <div>
+          <h3>Home Features</h3>
+          <ul class="list-check">
+            <li>Gender-specific homes for safety and comfort</li>
+            <li>Fully furnished bedrooms and common areas</li>
+            <li>Shared living room and dining spaces</li>
+            <li>Equipped kitchen for daily meal preparation</li>
+            <li>Utilities typically included (electric, water, gas)</li>
+            <li>Wi-Fi access (where available)</li>
+            <li>On-site or in-unit laundry access</li>
+          </ul>
+          <p style="font-size: 0.9rem; margin-top: 0.7rem; color: #6b7280;">
+            *Amenities may vary by property. Full details are provided during
+            the intake and placement process.
+          </p>
+        </div>
+        <div>
+          <h3>How It Works – Residents & Families</h3>
+          <ol style="padding-left: 1.1rem; margin-bottom: 0.75rem;">
+            <li>
+              <strong>Inquiry & Eligibility</strong> – Contact us or speak with
+              your case manager to confirm basic eligibility and availability.
+            </li>
+            <li>
+              <strong>Application & Screening</strong> – We review background,
+              income source, and housing needs to ensure a safe, appropriate
+              placement.
+            </li>
+            <li>
+              <strong>Placement & Move-In</strong> – Once approved, we assign a
+              bed, review house rules, and coordinate a smooth move-in.
+            </li>
+          </ol>
+          <p style="font-size: 0.9rem; color: #6b7280;">
+            Our expectation is that residents are capable of managing their own
+            ADLs and living respectfully in a shared home environment.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- For Partners -->
+  <section id="partners">
+    <div class="container">
+      <h2 class="section-title">For Case Managers, VA & Referral Partners</h2>
+      <p class="section-subtitle">
+        We understand the importance of reliable placements, clear
+        communication, and documentation for your clients.
+      </p>
+
+      <div class="grid-2">
+        <div class="card">
+          <h3>How We Support You</h3>
+          <ul class="list-check">
+            <li>Timely responses to placement inquiries</li>
+            <li>Simple referral and intake process</li>
+            <li>Gender-specific, fully furnished homes</li>
+            <li>Clear expectations and house rules</li>
+            <li>Documentation to support your case notes and requirements</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Referral Process</h3>
+          <ol style="padding-left: 1.1rem;">
+            <li>
+              <strong>Connect with our team</strong> to discuss your client’s
+              needs, funding source, and timeline.
+            </li>
+            <li>
+              <strong>Submit referral details</strong> using our simple referral
+              form.
+            </li>
+            <li>
+              <strong>Coordinate placement</strong> as we provide availability,
+              home details, and move-in instructions.
+            </li>
+          </ol>
+          <p style="font-size: 0.9rem; color: #6b7280; margin-top: 0.6rem;">
+            To request our referral form or discuss a potential placement,
+            please contact us using the form or details below.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq">
+    <div class="container">
+      <h2 class="section-title">Frequently Asked Questions</h2>
+      <div class="faq">
+        <div class="faq-item">
+          <h3>Is this assisted living or a medical facility?</h3>
+          <p>
+            No. Riva Oak Independent Living provides independent living housing
+            only. We do not provide medical care, nursing services, or personal
+            care assistance.
+          </p>
+        </div>
+        <div class="faq-item">
+          <h3>Who is eligible to live in your homes?</h3>
+          <p>
+            Adults who can manage their Activities of Daily Living (ADLs) and
+            live safely in a shared housing environment may be eligible. Some
+            homes may have additional criteria based on referrals or funding
+            source.
+          </p>
+        </div>
+        <div class="faq-item">
+          <h3>Do you accept veterans?</h3>
+          <p>
+            Yes. We welcome veterans and frequently work with VA case managers
+            and veteran-serving organizations to coordinate placements.
+          </p>
+        </div>
+        <div class="faq-item">
+          <h3>Are your homes co-ed?</h3>
+          <p>
+            No. Our homes are gender-specific to promote comfort, privacy, and
+            safety for residents.
+          </p>
+        </div>
+        <div class="faq-item">
+          <h3>What is included in the monthly rate?</h3>
+          <p>
+            Monthly rates typically include housing, furnishings, and utilities
+            for the home. Specific details vary by property and will be
+            confirmed during the intake process.
+          </p>
+        </div>
+        <div class="faq-item">
+          <h3>How long can someone stay?</h3>
+          <p>
+            Stays may be short-term or long-term depending on the resident’s
+            needs, funding, and compliance with house rules and payment terms.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact">
+    <div class="container">
+      <h2 class="section-title">Contact Us</h2>
+      <p class="section-subtitle">
+        Whether you’re a resident, family member, VA representative, or case
+        manager, we’d be honored to explore how we can support your housing
+        needs.
+      </p>
+
+      <div class="contact-grid">
+        <div>
+          <form>
+            <div>
+              <label for="name">Name</label>
+              <input id="name" type="text" placeholder="Your full name" />
+            </div>
+            <div>
+              <label for="role">I am a</label>
+              <select id="role">
+                <option>Resident / Prospect</option>
+                <option>Family Member</option>
+                <option>Case Manager / Social Worker</option>
+                <option>VA Representative</option>
+                <option>Other</option>
+              </select>
+            </div>
+            <div>
+              <label for="phone">Phone</label>
+              <input id="phone" type="tel" placeholder="Your phone number" />
+            </div>
+            <div>
+              <label for="email">Email</label>
+              <input id="email" type="email" placeholder="you@example.com" />
+            </div>
+            <div>
+              <label for="message">How can we help?</label>
+              <textarea
+                id="message"
+                placeholder="Tell us about your housing needs or referral."
+              ></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">
+              Submit Inquiry
+            </button>
+          </form>
+        </div>
+        <div>
+          <div class="card">
+            <h3>Direct Contact</h3>
+            <p>
+              <strong>Email:</strong>
+              <a href="mailto:info@rohllc.org">info@rohllc.org</a><br />
+              <strong>Phone:</strong>
+              <a href="tel:+18324492742">+1 (832) 449-2742</a>
+            </p>
+            <p style="margin-top: 0.75rem; font-size: 0.9rem;">
+              Please note: Submitting an inquiry does not guarantee placement,
+              but it is the first step in determining eligibility and
+              availability.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container footer-grid">
+      <div>
+        &copy; <span id="year"></span> Riva Oak Independent Living. All rights
+        reserved.
+      </div>
+      <div class="footer-links">
+        <span>Independent Living Housing Program (ILHP)</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Set current year in footer
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
+  </script>
+</body>
+</html>
